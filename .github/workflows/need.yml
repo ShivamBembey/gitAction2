@@ -8,9 +8,11 @@ jobs:
     steps:
       - name: Job 1 Step 1
         run: echooo "Running Job 1 Step 1"
+        continue-on-error: true
       - name: Job 1 Step 2
         run: echooo "Running Job 1 Step 2"
-      # Add more steps for Job 1 as needed
+        continue-on-error: true
+      
 
   job2:
     needs: job1
@@ -20,4 +22,4 @@ jobs:
         run: echo "Running Job 2 Step 1"
       - name: Job 2 Step 2
         run: echo "Running Job 2 Step 2"
-      # Add more steps for Job 2 as needed
+      
