@@ -19,7 +19,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Job 2 Step 1
-        run: echo "Running Job 2 Step 1"
+        run: echoo "Running Job 2 Step 1"
       - name: Job 2 Step 2
-        run: echo "Running Job 2 Step 2"
+        run: echoo "Running Job 2 Step 2"
+
+  job3:
+    needs: job2
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Job 2 Step 1
+        run: echo "hi"
+      - name: Job 2 Step 2
+        run: echo "bye"      
       
