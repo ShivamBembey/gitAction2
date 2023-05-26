@@ -1,0 +1,13 @@
+name: WorkFlowName2
+
+on:
+    push:
+        branches: [ "main" ]
+
+jobs:
+    job1:
+        runs-on: windows-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Run a one-line script
+              run: Hello from VScode
